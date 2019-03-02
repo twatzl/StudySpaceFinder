@@ -1,0 +1,24 @@
+version: '2'
+
+volumes:
+  data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/<username>/.study-space-finder/db/data'
+
+services:
+  cockroachdb:
+    container_name: cockroachdb
+    image: cockroachdb/cockroach:v2.1.4
+    command: start --insecure --listen-addr=0.0.0.0 --store=attrs=ssd,path=/var/lib/cockroach/
+    restart: always
+    volumes:
+        - data:/var/lib/cockroach:Z
+    expose:
+      - "8080"
+      - "26257"
+    ports:
+      - "26257:26257"
+      - "8080:8080"
