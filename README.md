@@ -1,35 +1,37 @@
-# Welcome to Buffalo!
+# StudySpaceFinder
 
-Thank you for choosing Buffalo for your web development needs.
+A simple app to find a study space for you needs.
 
-## Database Setup
+## Development
 
-It looks like you chose to set up your application using a cockroach database! Fantastic!
+### Frontend
 
-The first thing you need to do is open up the "database.yml" file and edit it to use the correct usernames, passwords, hosts, etc... that are appropriate for your environment.
+The Frontend is written using **vue.js** with **typescript**.
 
-You will also need to make sure that **you** start/install the database of your choice. Buffalo **won't** install and start cockroach for you.
+In order to start the frontend run
 
-### Create Your Databases
+```
+npm run serve
+```
 
-Ok, so you've edited the "database.yml" file and started cockroach, now Buffalo can create the databases in that file for you:
+in the frontend directory.
 
-	$ buffalo db create -a
+### Backend
 
-## Starting the Application
+Backend is written using **golang** and **buffalo**.
 
-Buffalo ships with a command that will watch your application and automatically rebuild the Go binary and any assets for you. To do that run the "buffalo dev" command:
 
-	$ buffalo dev
 
-If you point your browser to [http://127.0.0.1:3000](http://127.0.0.1:3000) you should see a "Welcome to Buffalo!" page.
+### Database
 
-**Congratulations!** You now have your Buffalo application up and running.
+For running the app you also need a database. We use cockroachdb. The easiest way to set it up is using the docker-compose.yml file in infrastructure/cockroachdb.
 
-## What Next?
+Simply change the path accordingly and make sure you manually create the path before starting. 
 
-We recommend you heading over to [http://gobuffalo.io](http://gobuffalo.io) and reviewing all of the great documentation there.
+Then start the database using:
 
-Good luck!
+```
+docker-compose up -d
+```
 
-[Powered by Buffalo](http://gobuffalo.io)
+
