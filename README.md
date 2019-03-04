@@ -4,6 +4,14 @@ A simple app to find a study space for you needs.
 
 ## Development
 
+### Prerequisites
+
+- Docker (+ docker-compose)
+- go (https://golang.org/doc/install)
+- npm (https://www.npmjs.com/get-npm)
+- vue-cli (https://cli.vuejs.org/guide/installation.html)
+- buffalo (https://gobuffalo.io/en/docs/installation)
+
 ### Frontend
 
 The Frontend is written using **vue.js** with **typescript**.
@@ -11,6 +19,7 @@ The Frontend is written using **vue.js** with **typescript**.
 In order to start the frontend run
 
 ```
+npm install
 npm run serve
 ```
 
@@ -20,6 +29,10 @@ in the frontend directory.
 
 Backend is written using **golang** and **buffalo**.
 
+To run the backend in development mode just run:
+```
+
+```
 
 
 ### Database
