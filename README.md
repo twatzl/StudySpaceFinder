@@ -30,9 +30,17 @@ in the frontend directory.
 Backend is written using **golang** and **buffalo**.
 
 To run the backend in development mode just run:
-```
 
 ```
+buffalo db create -a -d
+buffalo db migrate -d
+buffalo dev
+```
+
+This will:
+1. create all necessary databases
+2. create the tables in the databases
+3. start the buffalo app in dev mode
 
 
 ### Database
