@@ -117,3 +117,9 @@ test/
 
 # Ignore osx DS_store files
 .DS_Store
+
+# Ignore .gitignore
+.gitignore
+
+# Ignore docker-compose.yml
+docker-compose.yml
