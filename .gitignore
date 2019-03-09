@@ -115,4 +115,5 @@ test/
 
 # End of https://www.gitignore.io/api/go,vue,node
 
-package-lock.json
+# Ignore osx DS_store files
+.DS_Store
