@@ -1,8 +1,8 @@
 <template>
   <div class="spaces">
     <Toolbar/>
-    <StudySpace/>
-    <StudySpace/>
+      <StudySpace/>
+      <StudySpace/>
   </div>
 </template>
 
@@ -17,4 +17,5 @@ import Toolbar from '@/components/Toolbar.vue';
   },
 })
 export default class Spaces extends Vue {}
+//@Props() private spaces!: Space[]
 </script>
