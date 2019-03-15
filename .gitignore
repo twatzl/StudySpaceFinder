@@ -123,3 +123,6 @@ test/
 
 # Ignore docker-compose.yml
 docker-compose.yml
+
+# Ignore package-lock
+package-lock.json
