@@ -1,5 +1,6 @@
 <template>
   <div class="study-space">
+  
     <md-card>
       <md-card-header>
         <div class="md-title">Group study rooms</div>
@@ -46,7 +47,6 @@
     </md-card>
 
     <md-card>
-
       <md-card-media-actions>
         <md-card-media>
           <img src="@/assets/gurula.jpg" alt="Gurula">
@@ -112,5 +112,7 @@ img {
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
-export default class StudySpace extends Vue {}
+  export default class StudySpace extends Vue { }
+    
+    
 </script>

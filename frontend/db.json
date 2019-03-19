@@ -1,0 +1,31 @@
+{
+  "spaces": [
+    {
+      "id": 1,
+      "name": "Gurula",
+      "building": "Exactum",
+      "location2": "C",
+      "floor": "1st floor",
+      "capacity" : "20",
+      "reservable": false
+    },
+    {
+      "id": 2,
+      "name": "Go - Group Study Room",
+      "building": "Physicum",
+      "location2": "Library",
+      "floor": "2nd floor",
+      "capacity": "2",
+      "reservable": true
+    },
+    {
+      "id": 3,
+      "name": "g103g",
+      "building": "Physicum",
+      "location2": "Library",
+      "floor": "1st floor",
+      "capacity": "6",
+      "reservable": true
+    }
+  ]
+}
