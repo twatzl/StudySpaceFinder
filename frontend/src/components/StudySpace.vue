@@ -92,7 +92,6 @@ img {
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-
 interface Space {
   name: string;
   building: string;
@@ -103,7 +102,6 @@ interface Space {
   tags?: string[];
   reservable?: boolean;
 }
-
 @Component
 export default class StudySpace extends Vue {
   @Prop({
