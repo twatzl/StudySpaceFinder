@@ -1,77 +1,9 @@
 <template>
   <div class="study-space">
-  
     <md-card>
-<<<<<<< HEAD
-      <md-card-header>
-        <div class="md-title">Group study rooms</div>
-        <div class="md-subhead">Library, Physicum</div>
-      </md-card-header>
-
-      <md-card-media-actions>
-        <md-card-media>
-          <img src="@/assets/library.png" alt="Gurula" style="max-height: 157.5px">
-        </md-card-media>
-
-        <md-card-actions>
-          <md-button class="md-icon-button">
-            <md-icon>favorite</md-icon>
-          </md-button>
-
-          <md-button class="md-icon-button">
-            <md-icon>bookmark</md-icon>
-          </md-button>
-
-          <md-button class="md-icon-button">
-            <md-icon>share</md-icon>
-          </md-button>
-        </md-card-actions>
-      </md-card-media-actions>
-
-      <md-card-expand>
-        <md-card-actions md-alignment="space-between">
-          <!-- <div>
-            <md-button>See map</md-button>
-            <md-button>Share</md-button>
-          </div>-->
-          <md-card-expand-trigger>
-            <md-button class="md-icon-button">
-              <md-icon>keyboard_arrow_down</md-icon>
-            </md-button>
-          </md-card-expand-trigger>
-        </md-card-actions>
-
-        <md-card-expand-content>
-          <md-card-content>Pre-bookable rooms for 3+ people. Some rooms have screens or whiteboards.</md-card-content>
-        </md-card-expand-content>
-      </md-card-expand>
-    </md-card>
-
-    <md-card>
-      <md-card-media-actions>
-        <md-card-media>
-          <img src="@/assets/gurula.jpg" alt="Gurula">
-        </md-card-media>
-
-        <md-card-actions>
-          <md-button class="md-icon-button">
-            <md-icon>favorite</md-icon>
-          </md-button>
-
-          <md-button class="md-icon-button">
-            <md-icon>bookmark</md-icon>
-          </md-button>
-
-          <md-button class="md-icon-button">
-            <md-icon>share</md-icon>
-          </md-button>
-        </md-card-actions>
-      </md-card-media-actions>
-=======
       <md-card-media>
         <img src="@/assets/gurula.jpg" alt="Gurula">
       </md-card-media>
->>>>>>> 9d1240ae8327ff752365b2f63368887f2945f251
 
       <md-card-header>
         <div class="md-title">{{ space.name }}</div>
@@ -157,7 +89,6 @@ img {
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-
 interface Space {
   name: string;
   building: string;
@@ -168,13 +99,7 @@ interface Space {
   tags?: string[];
   reservable?: boolean;
 }
-
 @Component
-<<<<<<< HEAD
-  export default class StudySpace extends Vue { }
-    
-    
-=======
 export default class StudySpace extends Vue {
   @Prop({
       type: Object,
@@ -192,5 +117,4 @@ export default class StudySpace extends Vue {
   })
   private space!: Space;
 }
->>>>>>> 9d1240ae8327ff752365b2f63368887f2945f251
 </script>
