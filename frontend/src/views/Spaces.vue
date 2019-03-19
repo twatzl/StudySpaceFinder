@@ -25,4 +25,5 @@ axios
 })
 
 export default class Spaces extends Vue {}
+//@Props() private spaces!: Space[]
 </script>
