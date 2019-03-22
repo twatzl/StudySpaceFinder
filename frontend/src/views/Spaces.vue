@@ -1,9 +1,12 @@
 <template>
-  <div class="spaces">
+  <div id="spaces">
     <Toolbar/>
     <div class="md-layout md-alignment-center">
-      <StudySpace/>
-      <StudySpace/>
+    <StudySpace 
+      v-for="item in spaces" 
+      v-bind:key="item.id"
+      v-bind:space="item"
+    ></StudySpace>
     </div>
   </div>
 </template>
@@ -18,13 +21,42 @@
 import { Component, Vue } from "vue-property-decorator";
 import StudySpace from "@/components/StudySpace.vue"; // @ is an alias to /src
 import Toolbar from "@/components/Toolbar.vue";
+import axios from 'axios';
+
+interface Space {
+  id: number;
+  name: string;
+  building: string;
+  open: string;
+  people: string;
+  floor?: string;
+  info?: string;
+  tags?: string[];
+  reservable?: boolean;
+}
 
 @Component({
   components: {
-    StudySpace,
-    Toolbar
-  }
+    StudySpace, Toolbar,
+  },
 })
-export default class Spaces extends Vue {}
-//@Props() private spaces!: Space[]
+
+export default class Spaces extends Vue {
+
+  private spaces: Space[] = []
+
+  private mounted () {
+    axios
+      .get('http://localhost:3001/spaces')
+      .then(response => {
+        response.data.forEach(element => {
+          const space = element as Space;
+          this.spaces.push(space);
+        });
+      });
+    console.log(this.spaces)
+  }
+  //@Props() private spaces!: Space[]
+}
+
 </script>
