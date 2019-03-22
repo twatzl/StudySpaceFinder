@@ -1,5 +1,5 @@
 <template>
-  <div class="study-space">
+  <div class="md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-100">
     <md-card>
       <md-card-media>
         <img src="@/assets/gurula.jpg" alt="Gurula">
@@ -44,7 +44,7 @@
   </div>
 </template>
 
- <style lang="scss" scoped>
+<style lang="scss" scoped>
 .md-card {
   width: 320px;
   margin: 4px;
@@ -59,6 +59,9 @@
 }
 .md-card-content {
   padding: 0 12px 12px;
+}
+.md-layout-item{
+  flex: none;
 }
 .md-card-media + .md-card-header {
   padding-top: 16px;
@@ -117,6 +120,6 @@ export default class StudySpace extends Vue {
           };
       },
   })
-  private space!: Space;
+  public space!: Space;
 }
 </script>
