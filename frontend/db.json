@@ -4,28 +4,38 @@
       "id": 1,
       "name": "Gurula",
       "building": "Exactum",
-      "location2": "C",
-      "floor": "1st floor",
-      "capacity": "20",
-      "reservable": false
+      "floor": "K",
+      "open": "8-19",
+      "people": "20",
+      "info": "Gurula is the den of TKO-äly, the accosiation of computer science students",
+      "tags": [
+        "sofas",
+        "coffee",
+        "computers",
+        "help"
+      ]
     },
     {
       "id": 2,
-      "name": "Go - Group Study Room",
+      "name": "Group study rooms",
       "building": "Physicum",
-      "location2": "Library",
-      "floor": "2nd floor",
-      "capacity": "2",
-      "reservable": true
+      "floor": "1",
+      "open": "8-18",
+      "people": "2-12",
+      "info": "Pre-bookable rooms for 2+ people. Some rooms have screens or whiteboards.",
+      "tags": [
+        "groupwork"
+      ]
     },
     {
       "id": 3,
       "name": "g103g",
       "building": "Physicum",
-      "location2": "Library",
       "floor": "1st floor",
-      "capacity": "6",
-      "reservable": true
+      "open": "8-18",
+      "people": "6",
+      "reservable": true,
+      "location2": "Library"
     }
   ]
 }

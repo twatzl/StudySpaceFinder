@@ -55,7 +55,7 @@
   padding-top: 0;
 }
 .md-card-actions .md-button {
-    margin: 0 8px;
+    margin: 0 4px;
 }
 .md-card-content {
   padding: 0 12px 12px;
@@ -94,6 +94,7 @@ img {
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 interface Space {
+  id: number;
   name: string;
   building: string;
   open: string;
@@ -102,14 +103,16 @@ interface Space {
   info?: string;
   tags?: string[];
   reservable?: boolean;
+  location?: string;
 }
 
 @Component
 export default class StudySpace extends Vue {
   @Prop({
-      type: Object,
+      type: Object as () => Space,
       default: () => {
           return {
+            id: 0,
             name: 'Gurula',
             building: 'Exactum',
             floor: 'K',
