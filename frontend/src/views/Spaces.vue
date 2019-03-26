@@ -2,8 +2,6 @@
   <div id="spaces">
     <Toolbar/>
     <div class="md-layout md-alignment-center">
-      <StudySpace/>
-      <StudySpace/>
       <StudySpace 
         v-for="item in spaces" 
         v-bind:key="item.id"
@@ -31,10 +29,11 @@ interface Space {
   building: string;
   open: string;
   people: string;
+  reservable: boolean;
+  //picture: string;
   floor?: string;
   info?: string;
   tags?: string[];
-  reservable?: boolean;
 }
 
 axios
@@ -63,7 +62,6 @@ export default class Spaces extends Vue {
       });
     console.log(this.spaces)
   }
-  //@Props() private spaces!: Space[]
 }
 
 </script>

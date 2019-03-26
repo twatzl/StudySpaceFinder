@@ -7,7 +7,7 @@
 
       <md-card-header>
         <div class="md-title">{{ space.name }}</div>
-        <div class="md-subhead">{{ space.building }}</div>
+        <div class="md-subhead">{{ space.building }}, floor {{ space.floor }}</div>
       </md-card-header>
 
       <md-card-expand>
@@ -20,7 +20,7 @@
             <md-icon>people</md-icon>
             <span>{{ space.people }}</span>
           </div>
-          <div class="info-container">
+          <div class="info-container" v-if="space.reservable">
             <md-icon>today</md-icon>
             <a href="https://outlook.office.com/calendar/view/month">Reserve</a>
           </div>
@@ -55,16 +55,19 @@
   padding-top: 0;
 }
 .md-card-actions .md-button {
-    margin: 0 4px;
+    margin: 0 8px;
 }
 .md-card-content {
   padding: 0 12px 12px;
+}
+.md-card-header {
+  padding: 8px;
 }
 .md-layout-item{
   flex: none;
 }
 .md-card-media + .md-card-header {
-  padding-top: 16px;
+  padding-top: 8px;
 }
 .md-chip {
   padding: 0 8px;
@@ -99,10 +102,11 @@ interface Space {
   building: string;
   open: string;
   people: string;
+  reservable: boolean;
+  //picture: string;
   floor?: string;
   info?: string;
   tags?: string[];
-  reservable?: boolean;
   location?: string;
 }
 

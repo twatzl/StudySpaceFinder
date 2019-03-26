@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Spaces from './views/Spaces.vue';
 
 Vue.use(Router);
 
@@ -9,14 +9,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
       path: '/spaces',
       name: 'spaces',
-      component: () => import('./views/Spaces.vue'),
+      component: Spaces,
     },
   ],
 });
