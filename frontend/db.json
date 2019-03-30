@@ -8,34 +8,315 @@
       "open": "8-19",
       "people": "20",
       "info": "Gurula is the den of TKO-äly, the accosiation of computer science students",
+      "reservable": false,
+      "location2": "",
+      "photo": "gurula.jpg",
       "tags": [
         "sofas",
         "coffee",
         "computers",
-        "help"
+        "help",
+        "computer science"
       ]
     },
     {
       "id": 2,
-      "name": "Group study rooms",
+      "name": "Group study room 1",
       "building": "Physicum",
       "floor": "1",
       "open": "8-18",
-      "people": "2-12",
-      "info": "Pre-bookable rooms for 2+ people. Some rooms have screens or whiteboards.",
+      "people": "3",
+      "info": "Big screen on the wall. No computers, you can connect your laptop via VGA or HDMI.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "G103c.png",
+      "tags": [
+        "groupwork",
+        "screen",
+        "G103c"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Group Study Room 2",
+      "building": "Physicum",
+      "floor": "1",
+      "open": "8-18",
+      "people": "3",
+      "info": "Big screen on the wall. No computers, you can connect your laptop via VGA or HDMI.",
+      "reservable": true,
+      "location2": "Library",
+      "tags": [
+        "screen",
+        "G103e"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Group Study Room 3",
+      "building": "Physicum",
+      "floor": "1",
+      "open": "8-18",
+      "people": "6",
+      "info": "Big screen on the wall. No computers, you can connect your laptop via VGA or HDMI.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "G103g.png",
+      "tags": [
+        "sofas",
+        "screen",
+        "G103g"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Group Study Room 4",
+      "building": "Physicum",
+      "floor": "1",
+      "open": "8-18",
+      "people": "12",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "G108a.png",
+      "tags": [
+        "groupwork",
+        "screen",
+        "G108a"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Go",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "2",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "go.png",
+      "tags": [
+        "groupwork",
+        "whiteboard"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Modula",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "5",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room5.png", 
       "tags": [
         "groupwork"
       ]
     },
     {
-      "id": 3,
-      "name": "g103g",
+      "id": 8,
+      "name": "Neko",
       "building": "Physicum",
-      "floor": "1st floor",
+      "floor": "2",
+      "open": "8-18",
+      "people": "5",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room4.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Octave",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "5",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room1.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Python",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "5",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room2.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Q",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "4",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room3.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Basic",
+      "building": "Physicum",
+      "floor": "2",
       "open": "8-18",
       "people": "6",
+      "info": "For group working.",
       "reservable": true,
-      "location2": "Library"
+      "location2": "Library",
+      "room": "room4.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Cobol",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "6",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room5.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Idris",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "2",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room2.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Dart",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "2",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room5.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Haskell",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "2",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room4.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Erlang",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "2",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room2.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Fortran",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "2",
+      "info": "For group working.",
+      "reservable": true,
+      "location2": "Library",
+      "photo": "room5.png",
+      "tags": [
+        "groupwork"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Navetta",
+      "building": "Exactum",
+      "floor": "K",
+      "open": "8-19",
+      "people": "20",
+      "info": "Navetta is TKO-Äly's coding cave. Here you can talk",
+      "reservable": false,
+      "location2": "",
+      "photo": "gurula.jpg",
+      "tags": [
+        "sofas",
+        "coffee",
+        "computers",
+        "help",
+        "computer science"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Maths hallway",
+      "building": "Exactum",
+      "floor": "3",
+      "open": "8-20",
+      "people": "40",
+      "info": "Here you can find help for your mathematical problems",
+      "reservable": false,
+      "location2": "",
+      "tags": [
+        "tutors",
+        "mathematics",
+        "computers",
+        "help",
+        "whiteboard"
+      ]
     }
   ]
 }
