@@ -103,7 +103,7 @@ interface Space {
   open: string;
   people: string;
   reservable: boolean;
-  //picture: string;
+  // picture: string;
   floor?: string;
   info?: string;
   tags?: string[];

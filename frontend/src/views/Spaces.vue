@@ -18,9 +18,9 @@
 </style>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import StudySpace from "@/components/StudySpace.vue"; // @ is an alias to /src
-import Toolbar from "@/components/Toolbar.vue";
+import { Component, Vue } from 'vue-property-decorator';
+import StudySpace from '@/components/StudySpace.vue'; // @ is an alias to /src
+import Toolbar from '@/components/Toolbar.vue';
 import axios from 'axios';
 
 interface Space {
@@ -30,7 +30,7 @@ interface Space {
   open: string;
   people: string;
   reservable: boolean;
-  //picture: string;
+  // picture: string;
   floor?: string;
   info?: string;
   tags?: string[];
@@ -38,10 +38,10 @@ interface Space {
 
 axios
   .get('http://localhost:3001/spaces')
-  .then(response => {
-    const spaces = response.data
-    console.log(spaces)
-  })
+  .then((response) => {
+    const spaces = response.data;
+    // console.log(spaces)
+  });
 
 @Component({
   components: {
@@ -50,17 +50,17 @@ axios
 })
 
 export default class Spaces extends Vue {
-  private spaces: Space[] = []
-  private mounted () {
+  private spaces: Space[] = [];
+  private mounted() {
     axios
       .get('http://localhost:3001/spaces')
-      .then(response => {
-        response.data.forEach(element => {
+      .then((response) => {
+        response.data.forEach((element) => {
           const space = element as Space;
           this.spaces.push(space);
         });
       });
-    console.log(this.spaces)
+    // console.log(this.spaces)
   }
 }
 
