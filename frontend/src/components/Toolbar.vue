@@ -1,46 +1,56 @@
 <template>
     <div>
-        <md-toolbar class="md-primary">
-            <h3 class="md-title" style="flex: 1">Study spaces</h3>
+        <md-toolbar>
+            <div class="md-toolbar-row">
+                <div class="md-toolbar-section-start">
+                    <h3 class="md-title" style="flex: 1">Study spaces</h3>
+                </div>
 
-            <div>
-                <md-autocomplete
-                        class="search"
-                        v-model="searchItem"
-                        :md-options="searchAutocompleteOptions"
-                        :md-open-on-focus="false"
-                        v-on:md-changed="searchChanged"
-                        v-on:md-selected="selectionChanged"
-                        md-layout="box">
-                    <label>Search...</label>
-
-                    <template slot="md-autocomplete-item" slot-scope="{ item, term }">
-                        <!-- Building -->
-                        <div v-if="item.type === 'building'">
-                            <md-icon>home</md-icon>
-                            <md-highlight-text :md-term="term">{{ item.name }}</md-highlight-text>
-                        </div>
-
-                        <!-- Tag -->
-                        <div v-else-if="item.type === 'tag'">
-                            <md-chip class="md-accent" md-clickable>
-                                <md-highlight-text :md-term="term">{{ item.name }}</md-highlight-text>
-                            </md-chip>
-                        </div>
-
-                        <!-- else -->
-                        <md-highlight-text v-else :md-term="term">{{ item.name }}</md-highlight-text>
-                    </template>
-                </md-autocomplete>
                 <div>
-                    <md-chip v-for="tag in selectedTags" class="md-primary" md-deletable v-on:md-delete="unselectTag(tag)" :key="tag">{{tag}}</md-chip>
+                    <md-autocomplete
+                            class="search"
+                            v-model="searchItem"
+                            :md-options="searchAutocompleteOptions"
+                            :md-open-on-focus="false"
+                            v-on:md-changed="emitSearchChanged"
+                            v-on:md-selected="selectionChanged"
+                            md-dense
+                            md-layout="box">
+                        <label>Search...</label>
+
+                        <template slot="md-autocomplete-item" slot-scope="{ item, term }">
+                            <!-- Building -->
+                            <div v-if="item.type === 'building'">
+                                <md-icon>home</md-icon><md-highlight-text :md-term="term">{{ item.name }}</md-highlight-text>
+                            </div>
+
+                            <!-- Tag -->
+                            <div v-else-if="item.type === 'tag'">
+                                <md-chip class="md-accent" md-clickable>
+                                    <md-highlight-text :md-term="term">{{ item.name }}</md-highlight-text>
+                                </md-chip>
+                            </div>
+
+                            <!-- else -->
+                            <md-highlight-text v-else :md-term="term">{{ item.name }}</md-highlight-text>
+                        </template>
+                    </md-autocomplete>
+                </div>
+
+
+                <div class="md-toolbar-section-end">
+                    <md-button class="md-icon-button">
+                        <md-icon>more_vert</md-icon>
+                    </md-button>
                 </div>
             </div>
-
-
-            <md-button class="md-icon-button">
-                <md-icon>more_vert</md-icon>
-            </md-button>
+            <div class="md-toolbar-row">
+                <div style="margin: 1em">
+                    <md-chip v-for="tag in selectedTags" class="md-primary" md-deletable
+                             v-on:md-delete="unselectTag(tag)" :key="tag">{{tag}}
+                    </md-chip>
+                </div>
+            </div>
         </md-toolbar>
     </div>
 </template>
@@ -68,13 +78,13 @@
         @Prop({
             default: () => {
                 return [];
-            }
+            },
         })
         private availableTags!: string[];
 
         private selectedTags: string[] = [];
 
-        private searchChanged() {
+        private emitSearchChanged() {
             const tb = this;
             this.$emit('search-changed', {searchTerm: tb.searchItem, selectedTags: tb.selectedTags});
         }
@@ -83,6 +93,7 @@
             const index = this.selectedTags.indexOf(tag, 0);
             if (index > -1) {
                 this.selectedTags.splice(index, 1);
+                this.emitSearchChanged();
             }
         }
 
@@ -94,6 +105,7 @@
             } else {
                 this.searchItem = value.name;
             }
+            // event here should be automatically emitted
         }
     }
 </script>
