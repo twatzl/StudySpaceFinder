@@ -85,9 +85,12 @@
         }
 
         private addSpaceToSearchIndex(space: Space) {
-            this.addAutocompleteOption('name' as string, space.name);
-            this.addAutocompleteOption('building' as string, space.building);
-            this.addAutocompleteOption('floor' as string, space.floor);
+            const nameType: string = 'name';
+            const buildingType: string = 'building';
+            const floorType: string = 'floor';
+            this.addAutocompleteOption(nameType, space.name);
+            this.addAutocompleteOption(buildingType, space.building);
+            this.addAutocompleteOption(floorType, space.floor);
             if (!Spaces.isNullOrUndefined(space.tags)) {
                 const tags = space.tags as string[];
                 this.addMultipleAutocompleteOptions('tag', tags);
@@ -95,7 +98,7 @@
             }
         }
 
-        private addMultipleAutocompleteOptions(type:string, names: string[]) {
+        private addMultipleAutocompleteOptions(type: string, names: string[]) {
             for (const idx in names) {
                 const name = names[idx];
                 this.addAutocompleteOption(type, name);
@@ -106,12 +109,14 @@
             // check to not insert twice
             for (const idx in this.autocompleteOptions) {
                 const opt = this.autocompleteOptions[idx];
-                if (opt.name == name) return;
+                if (opt.name === name) {
+                    return;
+                }
             }
 
             this.autocompleteOptions.push({
                 type: type,
-                name: name
+                name: name,
             });
         }
 
@@ -126,7 +131,7 @@
             this.filteredSpaces = fSpaces;
         }
 
-        private onSearchChanged(search: {searchTerm: string, selectedTags: string[]}) {
+        private onSearchChanged(search: { searchTerm: string, selectedTags: string[] }) {
             this.searchString = search.searchTerm;
             this.selectedTags = search.selectedTags;
             this.updateFilteredSpaces();
@@ -136,19 +141,21 @@
             // if (space == null) return true; // debug
 
             if (this.selectedTags.length > 0) {
-                for (let sTIdx in this.selectedTags) {
-                    let selectedTag = this.selectedTags[sTIdx];
+                for (const sTIdx in this.selectedTags) {
+                    const selectedTag = this.selectedTags[sTIdx];
                     let found = false;
-                    for (let tIdx in space.tags) {
-                        let tag = space.tags[tIdx];
-                        if (tag == selectedTag) {
+                    for (const tIdx in space.tags) {
+                        const tag = space.tags[tIdx];
+                        if (tag === selectedTag) {
                             found = true;
                             break;
                         }
                     }
 
                     // do not display a study space if any of the search tags does not apply
-                    if (!found) return false;
+                    if (!found) {
+                        return false;
+                    }
                 }
             }
 
