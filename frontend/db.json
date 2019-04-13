@@ -322,7 +322,10 @@
       "reservable": false,
       "location2": "Library",
       "tags": [
-        "private"
+        "private",
+        "quirky",
+        "natural light",
+        "view"
       ]
     },
     {
@@ -482,7 +485,7 @@
       "building": "Physicum",
       "floor": "2",
       "open": "8-18",
-      "people": "1",
+      "people": "2",
       "info": "Nice reading desks and padded chairs with some screen to give you privacy. Two chairs per table and cubicle.",
       "reservable": false,
       "location2": "Library",
@@ -638,6 +641,7 @@
         "groupwork",
         "natural light",
         "restroom",
+        "unicafe",
         "locker"
       ]
     },
@@ -660,7 +664,6 @@
         "copying",
         "restroom",
         "locker",
-        "coffee",
         "DK115"
       ]
     },
@@ -677,14 +680,14 @@
       "photo": "survomo.png",
       "tags": [
         "statistics",
-        "restroom",
-        "locker",
+        "sofa",
+        "student organization",
         "coffee"
       ]
     },
     {
       "id": 42,
-      "name": "Random forest study room",
+      "name": "Random Forest study room",
       "building": "Exactum",
       "floor": "K",
       "open": "8-18",
@@ -696,7 +699,9 @@
       "tags": [
         "groupwork",
         "private",
-        "CK110"
+        "CK110",
+        "computer science",
+        "data science"
       ]
     },
     {
@@ -712,8 +717,6 @@
       "photo": "think.png",
       "tags": [
         "pöhinä",
-        "restroom",
-        "locker",
         "coffee",
         "DK116"
       ]
@@ -734,7 +737,8 @@
         "coffee",
         "computers",
         "help",
-        "computer science"
+        "computer science",
+        "student organization"
       ]
     },
     {
@@ -785,7 +789,7 @@
       "open": "8-18",
       "people": "8",
       "info": "Near the stair case on 2nd floor you can find some Apple computers and sofas.",
-      "reservable": true,
+      "reservable": false,
       "photo": "apple.png",
       "tags": [
         "apple",
@@ -801,14 +805,14 @@
       "floor": "2",
       "open": "8-18",
       "people": "1",
-      "info": "If the room is free, you can go in and relax in the massage chair.",
+      "info": "If the room is free, you can go in and relax in the massage chair. Only ad-hoc reservable.",
       "reservable": true,
       "photo": "massage.png",
       "tags": [
         "relax",
         "comfortable",
         "private",
-        "restroom"
+        "quirky"
       ]
     },
     {
@@ -854,7 +858,7 @@
       "name": "Komero",
       "building": "Exactum",
       "floor": "3",
-      "open": "8-18.00",
+      "open": "8-18",
       "people": "15",
       "info": "The home of the mathematics students and the Matrix student organization.",
       "reservable": false,
@@ -1121,21 +1125,6 @@
       ]
     },
     {
-      "id": 70,
-      "name": "Class room D204",
-      "building": "Physicum",
-      "floor": "2",
-      "open": "8-17.30",
-      "people": "20",
-      "info": "Just a class room, no computers, might be reserved sometimes.",
-      "reservable": false,
-      "location2": "Kivipiha",
-      "photo": "d204.png",
-      "tags": [
-        "D204"
-      ]
-    },
-    {
       "id": 58,
       "name": "Class room D204",
       "building": "Physicum",
@@ -1180,7 +1169,8 @@
         "view",
         "light",
         "sandbox",
-        "hiekkis"
+        "hiekkis",
+        "quirky"
       ]
     },
     {
@@ -1188,7 +1178,7 @@
       "name": "Kasvis",
       "building": "Physicum",
       "floor": "1",
-      "open": "8-18.00",
+      "open": "8-18",
       "people": "30",
       "info": "The home of the geology students and the Vasara student organization. Room C102, ext to the entrance lobby at the Geology. Also called Kasvihuone.",
       "reservable": false,
