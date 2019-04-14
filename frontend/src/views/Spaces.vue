@@ -43,147 +43,148 @@
     }
 
     axios
-        .get('http://localhost:3001/spaces')
+        .get('https://ssfdb.herokuapp.com/spaces')
         .then((response) => {
-            const spaces = response.data;
-            // console.log(spaces)
-        });
-
-    @Component({
-        components: {
-            StudySpace, Toolbar,
-        },
-    })
-
-    export default class Spaces extends Vue {
-        private static isNullOrUndefined(obj) {
-            return obj == null;
-        }
-        private searchString: string = '';
-
-        private spaces: Space[] = [];
-
-        private filteredSpaces: Space[] = [];
-        private autocompleteOptions: AutocompleteOption[] = [];
-        private availableTags: string[] = [];
-        private selectedTags: string[] = [];
-        private selectedBuildings: string[] = [];
-        private selectedFloors: string[] = [];
-
-        private mounted() {
-            this.availableTags = [];
-            axios
-                .get('http://localhost:3001/spaces')
-                .then((response) => {
-                    response.data.forEach((element) => {
-                        const space = element as Space;
-                        this.spaces.push(space);
-                        this.addSpaceToSearchIndex(space);
-                    });
-
-                    this.updateFilteredSpaces();
-                });
-            // console.log(this.spaces)
-        }
-
-        private addSpaceToSearchIndex(space: Space) {
-            const nameType: string = 'name';
-            const buildingType: string = 'building';
-            const floorType: string = 'floor';
-            this.addAutocompleteOption(nameType, space.name);
-            this.addAutocompleteOption(buildingType, space.building);
-            this.addAutocompleteOption(floorType, space.floor);
-            if (!Spaces.isNullOrUndefined(space.tags)) {
-                const tags = space.tags as string[];
-                this.addMultipleAutocompleteOptions('tag', tags);
-                this.availableTags = this.availableTags.concat(tags);
-            }
-        }
-
-        private addMultipleAutocompleteOptions(type: string, names: string[]) {
-            for (const idx in names) {
-                const name = names[idx];
-                this.addAutocompleteOption(type, name);
-            }
-        }
-
-        private addAutocompleteOption(type: string, name: string) {
-            // check to not insert twice
-            for (const idx in this.autocompleteOptions) {
-                const opt = this.autocompleteOptions[idx];
-                if (opt.name === name) {
-                    return;
-                }
-            }
-
-            this.autocompleteOptions.push({
-                type: type,
-                name: name,
+            response.data.forEach((element) => {
+                const space = element as Space;
+                this.spaces.push(space);
             });
-        }
+            @Component({
+                components: {
+                    StudySpace, Toolbar,
+                },
+            })
 
-        private updateFilteredSpaces() {
-            const fSpaces: Space[] = [];
-            for (const sName in this.spaces) {
-                const s = this.spaces[sName];
-                if (this.spaceMatchesSearch(s)) {
-                    fSpaces.push(s);
+            export default class Spaces extends Vue {
+                private static isNullOrUndefined(obj) {
+                    return obj == null;
                 }
-            }
-            this.filteredSpaces = fSpaces;
-        }
 
-        private onSearchChanged(search: { searchTerm: string, selectedTags: string[], selectedBuildings: string[], selectedFloors: string[] }) {
-            this.searchString = search.searchTerm;
-            this.selectedTags = search.selectedTags;
-            this.selectedBuildings = search.selectedBuildings;
-            this.selectedFloors = search.selectedFloors;
-            this.updateFilteredSpaces();
-        }
+                private searchString: string = '';
 
-        private spaceMatchesSearch(space: Space) {
-            // if (space == null) return true; // debug
+                private spaces: Space[] = [];
 
-            if (this.selectedTags.length > 0) {
-                Spaces.matchAllTags(this.selectedTags, space.tags)
-            }
+                private filteredSpaces: Space[] = [];
+                private autocompleteOptions: AutocompleteOption[] = [];
+                private availableTags: string[] = [];
+                private selectedTags: string[] = [];
+                private selectedBuildings: string[] = [];
+                private selectedFloors: string[] = [];
 
-            if (this.selectedBuildings.length > 0 && this.selectedBuildings.indexOf(space.building) === -1) {
-                return false;
-            }
+                private mounted() {
+                    this.availableTags = [];
+                    axios
+                        .get('http://localhost:3001/spaces')
+                        .then((response) => {
+                            response.data.forEach((element) => {
+                                const space = element as Space;
+                                this.spaces.push(space);
+                                this.addSpaceToSearchIndex(space);
+                            });
 
-            if (this.selectedFloors.length > 0 && this.selectedFloors.indexOf(space.floor) === -1) {
-                return false;
-            }
+                            this.updateFilteredSpaces();
+                        });
+                    // console.log(this.spaces)
+                }
 
-            if (this.searchString != null && this.searchString.length > 0) {
-                const lowerSearch = this.searchString.toLowerCase();
-
-                return space.name != null && space.name.toLowerCase().includes(lowerSearch) ||
-                    space.building != null && space.building.toLowerCase().includes(lowerSearch) ||
-                    space.floor != null && space.floor.toLowerCase().includes(lowerSearch);
-            }
-            return true;
-        }
-
-        private static matchAllTags(selection: string[], studySpaceTags: string[]): boolean{
-            for (const selectedIdx in selection) {
-                const selectedTag = selection[selectedIdx];
-                let found = false;
-                for (const tagIdx in studySpaceTags) {
-                    const tag = studySpaceTags[tagIdx];
-                    if (tag === selectedTag) {
-                        found = true;
-                        break;
+                private addSpaceToSearchIndex(space: Space) {
+                    const nameType: string = 'name';
+                    const buildingType: string = 'building';
+                    const floorType: string = 'floor';
+                    this.addAutocompleteOption(nameType, space.name);
+                    this.addAutocompleteOption(buildingType, space.building);
+                    this.addAutocompleteOption(floorType, space.floor);
+                    if (!Spaces.isNullOrUndefined(space.tags)) {
+                        const tags = space.tags as string[];
+                        this.addMultipleAutocompleteOptions('tag', tags);
+                        this.availableTags = this.availableTags.concat(tags);
                     }
                 }
 
-                // do not display a study space if any of the search tags does not apply
-                if (!found) {
-                    return false;
+                private addMultipleAutocompleteOptions(type: string, names: string[]) {
+                    for (const idx in names) {
+                        const name = names[idx];
+                        this.addAutocompleteOption(type, name);
+                    }
+                }
+
+                private addAutocompleteOption(type: string, name: string) {
+                    // check to not insert twice
+                    for (const idx in this.autocompleteOptions) {
+                        const opt = this.autocompleteOptions[idx];
+                        if (opt.name === name) {
+                            return;
+                        }
+                    }
+
+                    this.autocompleteOptions.push({
+                        type: type,
+                        name: name,
+                    });
+                }
+
+                private updateFilteredSpaces() {
+                    const fSpaces: Space[] = [];
+                    for (const sName in this.spaces) {
+                        const s = this.spaces[sName];
+                        if (this.spaceMatchesSearch(s)) {
+                            fSpaces.push(s);
+                        }
+                    }
+                    this.filteredSpaces = fSpaces;
+                }
+
+                private onSearchChanged(search: { searchTerm: string, selectedTags: string[], selectedBuildings: string[], selectedFloors: string[] }) {
+                    this.searchString = search.searchTerm;
+                    this.selectedTags = search.selectedTags;
+                    this.selectedBuildings = search.selectedBuildings;
+                    this.selectedFloors = search.selectedFloors;
+                    this.updateFilteredSpaces();
+                }
+
+                private spaceMatchesSearch(space: Space) {
+                    // if (space == null) return true; // debug
+
+                    if (this.selectedTags.length > 0) {
+                        Spaces.matchAllTags(this.selectedTags, space.tags)
+                    }
+
+                    if (this.selectedBuildings.length > 0 && this.selectedBuildings.indexOf(space.building) === -1) {
+                        return false;
+                    }
+
+                    if (this.selectedFloors.length > 0 && this.selectedFloors.indexOf(space.floor) === -1) {
+                        return false;
+                    }
+
+                    if (this.searchString != null && this.searchString.length > 0) {
+                        const lowerSearch = this.searchString.toLowerCase();
+
+                        return space.name != null && space.name.toLowerCase().includes(lowerSearch) ||
+                            space.building != null && space.building.toLowerCase().includes(lowerSearch) ||
+                            space.floor != null && space.floor.toLowerCase().includes(lowerSearch);
+                    }
+                    return true;
+                }
+
+                private static matchAllTags(selection: string[], studySpaceTags: string[]): boolean {
+                    for (const selectedIdx in selection) {
+                        const selectedTag = selection[selectedIdx];
+                        let found = false;
+                        for (const tagIdx in studySpaceTags) {
+                            const tag = studySpaceTags[tagIdx];
+                            if (tag === selectedTag) {
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        // do not display a study space if any of the search tags does not apply
+                        if (!found) {
+                            return false;
+                        }
+                    }
+                    return true;
                 }
             }
-            return true;
-        }
-    }
 </script>
