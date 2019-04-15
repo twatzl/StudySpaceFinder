@@ -92,6 +92,7 @@
 }
 .info-container {
   padding: 0 4px;
+  white-space: nowrap;
 }
 .tag-container {
   padding: 4px 0;

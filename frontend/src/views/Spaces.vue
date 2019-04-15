@@ -13,9 +13,15 @@
 </template>
 
 <style lang="scss" scoped>
+<<<<<<< HEAD
     .md-alignment-center {
         align-items: flex-start;
     }
+=======
+.md-layout.md-alignment-center {
+  align-items: flex-start;
+}
+>>>>>>> small fixes to card
 </style>
 
 <script lang="ts">
