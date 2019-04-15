@@ -4,9 +4,7 @@
       <md-card-media>
         <img v-if="space.photo" :src="require(`@/assets/photos/${space.photo}`)" >
          <img v-else :src="require(`@/assets/photos/library.png`)">
-
       </md-card-media>
-
       <md-card-header>
         <div class="md-title">{{ space.name }}</div>
         <div class="md-subhead" v-if="space.location2"> {{ space.building }}, {{ space.location2}}, floor {{ space.floor }} </div>
@@ -38,7 +36,6 @@
             </md-button>
           </md-card-expand-trigger>
         </md-card-actions>
-
         <md-card-expand-content>
           <md-card-content>
             <div class="tag-container">
