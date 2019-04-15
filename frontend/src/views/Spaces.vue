@@ -56,17 +56,19 @@
     })
 
     export default class Spaces extends Vue {
-
         private static isNullOrUndefined(obj) {
             return obj == null;
         }
-
         private searchString: string = '';
+
         private spaces: Space[] = [];
+
         private filteredSpaces: Space[] = [];
         private autocompleteOptions: AutocompleteOption[] = [];
         private availableTags: string[] = [];
         private selectedTags: string[] = [];
+        private selectedBuildings: string[] = [];
+        private selectedFloors: string[] = [];
 
         private mounted() {
             this.availableTags = [];
@@ -131,9 +133,11 @@
             this.filteredSpaces = fSpaces;
         }
 
-        private onSearchChanged(search: { searchTerm: string, selectedTags: string[] }) {
+        private onSearchChanged(search: { searchTerm: string, selectedTags: string[], selectedBuildings: string[], selectedFloors: string[] }) {
             this.searchString = search.searchTerm;
             this.selectedTags = search.selectedTags;
+            this.selectedBuildings = search.selectedBuildings;
+            this.selectedFloors = search.selectedFloors;
             this.updateFilteredSpaces();
         }
 
@@ -141,22 +145,15 @@
             // if (space == null) return true; // debug
 
             if (this.selectedTags.length > 0) {
-                for (const sTIdx in this.selectedTags) {
-                    const selectedTag = this.selectedTags[sTIdx];
-                    let found = false;
-                    for (const tIdx in space.tags) {
-                        const tag = space.tags[tIdx];
-                        if (tag === selectedTag) {
-                            found = true;
-                            break;
-                        }
-                    }
+                Spaces.matchAllTags(this.selectedTags, space.tags)
+            }
 
-                    // do not display a study space if any of the search tags does not apply
-                    if (!found) {
-                        return false;
-                    }
-                }
+            if (this.selectedBuildings.length > 0 && this.selectedBuildings.indexOf(space.building) === -1) {
+                return false;
+            }
+
+            if (this.selectedFloors.length > 0 && this.selectedFloors.indexOf(space.floor) === -1) {
+                return false;
             }
 
             if (this.searchString != null && this.searchString.length > 0) {
@@ -165,6 +162,26 @@
                 return space.name != null && space.name.toLowerCase().includes(lowerSearch) ||
                     space.building != null && space.building.toLowerCase().includes(lowerSearch) ||
                     space.floor != null && space.floor.toLowerCase().includes(lowerSearch);
+            }
+            return true;
+        }
+
+        private static matchAllTags(selection: string[], studySpaceTags: string[]): boolean{
+            for (const selectedIdx in selection) {
+                const selectedTag = selection[selectedIdx];
+                let found = false;
+                for (const tagIdx in studySpaceTags) {
+                    const tag = studySpaceTags[tagIdx];
+                    if (tag === selectedTag) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                // do not display a study space if any of the search tags does not apply
+                if (!found) {
+                    return false;
+                }
             }
             return true;
         }
