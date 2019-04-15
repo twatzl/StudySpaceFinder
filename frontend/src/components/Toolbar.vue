@@ -26,10 +26,10 @@
 
           <template slot="md-autocomplete-item" slot-scope="{ item, term }">
             <!-- Building -->
-            <div v-if="item.type === 'building'">
+            <!-- <div v-if="item.type === 'building'">
               <md-icon>home</md-icon>
               <md-highlight-text :md-term="term">{{ item.name }}</md-highlight-text>
-            </div>
+            </div> -->
 
             <!-- Floor -->
             <div v-if="item.type === 'floor'">
@@ -90,15 +90,15 @@
   margin: 16px 0;
 }
 .md-toolbar .md-field.md-inline.md-autocomplete-box {
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 
-    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
-.md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box label{
-    color: rgba(0,0,0,0.87);
+.md-toolbar .md-autocomplete.md-theme-default.md-autocomplete-box label {
+  color: rgba(0, 0, 0, 0.87);
 }
 .search {
   max-width: 500px;
+  margin-left: 4px;
 }
 </style>
 
@@ -112,11 +112,11 @@ export default class Toolbar extends Vue {
   @Prop({ default: [] })
   private searchAutocompleteOptions!: string[];
 
-  @Prop({
-    default: () => {
-      return [];
-    }
-  })
+//   @Prop({
+//     default: () => {
+//       return [];
+//     }
+//   })
   private availableTags!: string[];
 
   private selectedTags: string[] = [];
