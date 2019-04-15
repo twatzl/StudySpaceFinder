@@ -2,12 +2,15 @@
   <div class="md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-100">
     <md-card>
       <md-card-media>
-        <img src="@/assets/gurula.jpg" alt="Gurula">
+        <img v-if="space.photo" :src="require(`@/assets/photos/${space.photo}`)" >
+         <img v-else :src="require(`@/assets/photos/library.png`)">
+
       </md-card-media>
 
       <md-card-header>
         <div class="md-title">{{ space.name }}</div>
-        <div class="md-subhead">{{ space.building }}, floor {{ space.floor }}</div>
+        <div class="md-subhead" v-if="space.location2"> {{ space.building }}, {{ space.location2}}, floor {{ space.floor }} </div>
+        <div class="md-subhead" v-else> {{ space.building }}, floor {{ space.floor }} </div> 
       </md-card-header>
 
       <md-card-expand>
@@ -20,9 +23,14 @@
             <md-icon>people</md-icon>
             <span>{{ space.people }}</span>
           </div>
-          <div class="info-container" v-if="space.reservable">
-            <md-icon>today</md-icon>
-            <a href="https://outlook.office.com/calendar/view/month">Reserve</a>
+          <div class="info-container">
+            <div v-if="space.reservable"> 
+              <md-icon>today</md-icon>
+              <a href="https://outlook.office.com/calendar/view/month">Reserve</a>
+            </div>
+            <div v-else> 
+                non-reservable
+            </div>
           </div>
           <md-card-expand-trigger>
             <md-button class="md-icon-button">
@@ -103,7 +111,7 @@ interface Space {
   open: string;
   people: string;
   reservable: boolean;
-  // picture: string;
+  photo?: string;
   floor?: string;
   info?: string;
   tags?: string[];

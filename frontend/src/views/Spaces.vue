@@ -30,7 +30,7 @@ interface Space {
   open: string;
   people: string;
   reservable: boolean;
-  // picture: string;
+  photo?: string;
   floor?: string;
   info?: string;
   tags?: string[];
