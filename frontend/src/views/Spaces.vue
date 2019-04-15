@@ -73,6 +73,7 @@ export default class Spaces extends Vue {
         this.spaces.push(space);
         this.addSpaceToSearchIndex(space);
       });
+
       this.updateFilteredSpaces();
     });
     // console.log(this.spaces)
