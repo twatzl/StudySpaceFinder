@@ -5,11 +5,6 @@
         <div class="md-toolbar-section-start">
           <h3 class="md-title">Study spaces</h3>
         </div>
-        <div class="md-toolbar-section-end">
-          <md-button class="md-icon-button">
-            <md-icon>more_vert</md-icon>
-          </md-button>
-        </div>
       </div>
       <div class="md-toolbar-row">
         <md-autocomplete
