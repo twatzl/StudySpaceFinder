@@ -5,75 +5,41 @@
         <div class="md-toolbar-section-start">
           <h3 class="md-title">Study spaces</h3>
         </div>
-        <div class="md-toolbar-section-end">
-          <md-button class="md-icon-button">
-            <md-icon>more_vert</md-icon>
-          </md-button>
-        </div>
       </div>
       <div class="md-toolbar-row">
-        <md-autocomplete
-          class="search"
-          v-model="searchItem"
-          :md-options="searchAutocompleteOptions"
-          :md-open-on-focus="false"
-          v-on:md-changed="emitSearchChanged"
-          v-on:md-selected="selectionChanged"
-          md-dense
-          md-layout="box"
-        >
-          <label>Search...</label>
-
-          <template slot="md-autocomplete-item" slot-scope="{ item, term }">
-            <!-- Building -->
-            <!-- <div v-if="item.type === 'building'">
-              <md-icon>home</md-icon>
-              <md-highlight-text :md-term="term">{{ item.name }}</md-highlight-text>
-            </div> -->
-
-            <!-- Floor -->
-            <div v-if="item.type === 'floor'">
-              <md-chip md-clickable>
-                <md-highlight-text :md-term="term">floor {{ item.name }}</md-highlight-text>
-              </md-chip>
-            </div>
-
-            <!-- Tag -->
-            <div v-else-if="item.type === 'tag'">
-              <md-chip md-clickable>
-                <md-highlight-text :md-term="term">{{ item.name }}</md-highlight-text>
-              </md-chip>
-            </div>
-
-            <!-- else -->
-            <md-highlight-text v-else :md-term="term">{{ item.name }}</md-highlight-text>
-          </template>
-        </md-autocomplete>
-      </div>
-      <div class="md-toolbar-row">
-        <div style="margin: 1em">
-          <md-chip
-            v-for="tag in selectedBuildings"
-            md-deletable
-            v-on:md-delete="unselectBuilding(tag)"
-            :key="tag"
+        <div>
+          <multiselect
+            v-model="value"
+            :options="filterOptions"
+            :multiple="true"
+            :close-on-select="false"
+            :clear-on-select="false"
+            :preserve-search="true"
+            placeholder="Search or filter by ..."
+            :show-labels="false"
+            :preselect-first="false"
           >
-            <md-icon>home</md-icon>
-            {{tag}}
-          </md-chip>
-          <md-chip
-            v-for="tag in selectedFloors"
-            md-deletable
-            v-on:md-delete="unselectFloor(tag)"
-            :key="tag"
-          >floor {{tag}}</md-chip>
-          <md-chip
-            v-for="tag in selectedTags"
-            md-deletable
-            v-on:md-delete="unselectTag(tag)"
-            :key="tag"
-          >{{tag}}</md-chip>
+            <template slot="selection" slot-scope="{ values, search, isOpen }">
+              <span
+                class="multiselect__single"
+                v-if="values.length &amp;&amp; !isOpen"
+              >{{ values.length }} options selected</span>
+            </template>
+          </multiselect>
+          <pre class="language-json"><code>{{ value  }}</code></pre>
         </div>
+        <!-- <multiselect
+          v-model="value"
+          :options="options"
+          :multiple="true"
+          :taggable="true"
+          track-by="code"
+          placeholder="Search..."
+          tag-placeholder="Select"
+          label="name"
+          @tag="addTag"
+        ></multiselect>
+        <pre class="language-json"><code>{{ value  }}</code></pre> -->
       </div>
     </md-toolbar>
   </div>
@@ -104,73 +70,44 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import Multiselect from 'vue-multiselect'; 
+
+interface Option {
+  name: string,
+}
 
 @Component
 export default class Toolbar extends Vue {
-  private searchItem: any = null;
+  @Prop({ type: Array })
+  public options!: string[];
 
-  @Prop({ default: [] })
-  private searchAutocompleteOptions!: string[];
-
-//   @Prop({
-//     default: () => {
-//       return [];
-//     }
-//   })
-  private availableTags!: string[];
-
-  private selectedTags: string[] = [];
-  private selectedFloors: string[] = [];
-  private selectedBuildings: string[] = [];
-
-  private emitSearchChanged() {
-    const tb = this;
-    this.$emit("search-changed", {
-      searchTerm: tb.searchItem,
-      selectedBuildings: tb.selectedBuildings,
-      selectedFloors: tb.selectedFloors,
-      selectedTags: tb.selectedTags
-    });
+  // props: {
+  //   options: {
+  //     type: string[],
+  //   }
+  // }
+  components: {
+    Multiselect,
   }
-
-  private unselectTag(tag: string) {
-    const index = this.selectedTags.indexOf(tag, 0);
-    if (index > -1) {
-      this.selectedTags.splice(index, 1);
-      this.emitSearchChanged();
+  data () {
+    
+    return {
+      value: null,
+      filterOptions: this.options,
     }
   }
+  // methods: {
+  //   addTag (newTag: string):void {
 
-  private unselectBuilding(tag: string) {
-    const index = this.selectedBuildings.indexOf(tag, 0);
-    if (index > -1) {
-      this.selectedBuildings.splice(index, 1);
-      this.emitSearchChanged();
-    }
-  }
-
-  private unselectFloor(tag: string) {
-    const index = this.selectedFloors.indexOf(tag, 0);
-    if (index > -1) {
-      this.selectedFloors.splice(index, 1);
-      this.emitSearchChanged();
-    }
-  }
-
-  private selectionChanged(value: any) {
-    if (value.type === "tag") {
-      this.searchItem = "";
-      this.selectedTags.push(value.name);
-    } else if (value.type == "building") {
-      this.searchItem = "";
-      this.selectedBuildings.push(value.name);
-    } else if (value.type == "floor") {
-      this.searchItem = "";
-      this.selectedFloors.push(value.name);
-    } else {
-      this.searchItem = value.name;
-    }
-    // event here should be automatically emitted
-  }
+  //     const tag = {
+  //       name: newTag,
+  //       code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+  //     }
+  //     this.options.push(tag)
+  //     this.value.push(tag)
+  //   }
+  // }
+  
 }
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
