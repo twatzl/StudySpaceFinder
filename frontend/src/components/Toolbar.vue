@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="md-toolbar-row">
-        <div>
+        <div style="margin: 8px">
           <multiselect
             v-model="value"
             :options="options"
@@ -27,6 +27,8 @@
               >{{ values.length }} options selected</span>
             </template>
           </multiselect>
+        </div>
+        <div>
           <div>
             <md-chip
               class="md-accent"
@@ -47,9 +49,6 @@
   height: 28px;
   border-radius: 28px;
   line-height: 28px;
-}
-.md-chip svg path {
-  pointer-events: none;
 }
 .md-toolbar + .md-toolbar {
   margin: 16px 0;
@@ -79,7 +78,7 @@ export default class Toolbar extends Vue {
   private updateFilters(value: string[]) {
     this.$emit("input", value);
   }
-  private removeFilter(event, filter){
+  private removeFilter(event, filter) {
     this.value.splice(this.value.indexOf(filter), 1);
     this.updateFilters(this.value);
   }
