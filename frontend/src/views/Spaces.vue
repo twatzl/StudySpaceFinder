@@ -8,7 +8,7 @@
 </template>
 
 <style lang="scss" scoped>
-.md-alignment-center {
+.md-layout.md-alignment-center {
   align-items: flex-start;
 }
 </style>
