@@ -25,6 +25,9 @@ import { Component, Vue } from "vue-property-decorator";
 import StudySpace from "@/components/StudySpace.vue"; // @ is an alias to /src
 import Toolbar from "@/components/Toolbar.vue";
 import axios from "axios";
+import BackToTop from "vue-backtotop";
+
+Vue.use(BackToTop);
 
 interface Space {
   id: number;

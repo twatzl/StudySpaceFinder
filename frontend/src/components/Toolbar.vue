@@ -71,10 +71,36 @@
         </div>
       </div>
     </md-toolbar>
+    
+    <back-to-top 
+      class="btn-to-top"
+       bottom="20px" 
+      right="20px">
+      <md-button 
+        color="red"
+        class="md-fab md-mini md-primary"
+        >
+        <md-icon>
+          find_replace
+        </md-icon>
+      </md-button>  
+    </back-to-top>
+
   </div>
 </template>
 
 <style lang="scss" scoped>
+
+.btn-to-top {
+ 
+  width: 60px;
+  height: 60px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 22px;
+}
+
 .md-chip {
   height: 28px;
   border-radius: 28px;
@@ -95,6 +121,9 @@
   max-width: 500px;
   margin-left: 4px;
 }
+
+
+
 </style>
 
 <script lang="ts">
