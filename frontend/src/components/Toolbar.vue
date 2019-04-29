@@ -18,6 +18,7 @@
             placeholder="Search or filter by ..."
             :show-labels="false"
             :preselect-first="false"
+            v-on:input="updateFilters"
           >
             <template slot="selection" slot-scope="{ values, search, isOpen }">
               <span
@@ -39,7 +40,7 @@
           label="name"
           @tag="addTag"
         ></multiselect>
-        <pre class="language-json"><code>{{ value  }}</code></pre> -->
+        <pre class="language-json"><code>{{ value  }}</code></pre>-->
       </div>
     </md-toolbar>
   </div>
@@ -70,10 +71,10 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Multiselect from 'vue-multiselect'; 
+import Multiselect from "vue-multiselect";
 
 interface Option {
-  name: string,
+  name: string;
 }
 
 @Component
@@ -87,15 +88,19 @@ export default class Toolbar extends Vue {
   //   }
   // }
   components: {
-    Multiselect,
-  }
-  data () {
-    
+    Multiselect;
+  };
+  data() {
     return {
       value: null,
-      filterOptions: this.options,
-    }
+      filterOptions: this.options
+    };
   }
+
+  private updateFilters(value: string[]){
+    this.$emit("input", value)
+  }
+
   // methods: {
   //   addTag (newTag: string):void {
 
@@ -107,7 +112,6 @@ export default class Toolbar extends Vue {
   //     this.value.push(tag)
   //   }
   // }
-  
 }
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

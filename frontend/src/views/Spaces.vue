@@ -1,8 +1,8 @@
 <template>
   <div id="spaces">
-    <Toolbar v-bind:options="options"></Toolbar>
+    <Toolbar v-bind:options="options" @input="updateFilters"></Toolbar>
     <div class="md-layout md-alignment-center">
-      <StudySpace v-for="item in spaces" v-bind:key="item.id" v-bind:space="item"></StudySpace>
+      <StudySpace v-for="item in filteredSpaces" v-bind:key="item.id" v-bind:space="item"></StudySpace>
     </div>
   </div>
 </template>
@@ -56,6 +56,8 @@ interface Space {
 })
 export default class Spaces extends Vue {
   private spaces: Space[] = [];
+  private filters: string[] = [];
+  private filteredSpaces: Space[] = [];
   private options: string[] = [];
   private mounted() {
     axios.get("http://localhost:3001/spaces").then(response => {
@@ -65,11 +67,46 @@ export default class Spaces extends Vue {
         this.addSpaceToOptions(space);
       });
     });
+    this.updateSpaceSelection();
+  }
+
+  private updateFilters(value: string[]) {
+    this.filters = value;
+    this.updateSpaceSelection();
+  }
+
+  private updateSpaceSelection() {
+    if (this.filters.length != 0) {
+      console.log(this.filters);
+      let toFilter = this.spaces;
+      let filtered: Space[];
+      for (let filter of this.filters) {
+        filtered = [];
+        for (let space of toFilter) {
+          if (space.name.includes(filter)) {
+            filtered.push(space);
+            continue;
+          }
+          if (space.building.includes(filter)) {
+            filtered.push(space);
+            continue;
+          }
+          if (space.tags.includes(filter)) {
+            filtered.push(space);
+          }
+        }
+        toFilter = filtered;
+      }
+      console.log(filtered)
+      this.filteredSpaces = filtered;
+      return;
+    }
+    this.filteredSpaces = this.spaces;
   }
 
   private addSpaceToOptions(space: Space) {
     this.options.push(space.name);
-    if(!this.options.includes(space.building)){
+    if (!this.options.includes(space.building)) {
       this.options.push(space.building);
     }
     if (space.tags) {
