@@ -10,11 +10,11 @@
         <div>
           <multiselect
             v-model="value"
-            :options="filterOptions"
+            :options="options"
             :multiple="true"
             :close-on-select="false"
             :clear-on-select="false"
-            :preserve-search="true"
+            :preserve-search="false"
             placeholder="Search or filter by ..."
             :show-labels="false"
             :preselect-first="false"
@@ -27,20 +27,16 @@
               >{{ values.length }} options selected</span>
             </template>
           </multiselect>
-          <pre class="language-json"><code>{{ value  }}</code></pre>
+          <div>
+            <md-chip
+              class="md-accent"
+              md-deletable
+              v-for="v in value"
+              :key="v"
+              @md-delete="removeFilter($event, v)"
+            >{{ v }}</md-chip>
+          </div>
         </div>
-        <!-- <multiselect
-          v-model="value"
-          :options="options"
-          :multiple="true"
-          :taggable="true"
-          track-by="code"
-          placeholder="Search..."
-          tag-placeholder="Select"
-          label="name"
-          @tag="addTag"
-        ></multiselect>
-        <pre class="language-json"><code>{{ value  }}</code></pre>-->
       </div>
     </md-toolbar>
   </div>
@@ -51,7 +47,9 @@
   height: 28px;
   border-radius: 28px;
   line-height: 28px;
-  background-color: powderblue;
+}
+.md-chip svg path {
+  pointer-events: none;
 }
 .md-toolbar + .md-toolbar {
   margin: 16px 0;
@@ -71,47 +69,20 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Multiselect from "vue-multiselect";
-
-interface Option {
-  name: string;
-}
 
 @Component
 export default class Toolbar extends Vue {
   @Prop({ type: Array })
   public options!: string[];
+  private value: string[] = [];
 
-  // props: {
-  //   options: {
-  //     type: string[],
-  //   }
-  // }
-  components: {
-    Multiselect;
-  };
-  data() {
-    return {
-      value: null,
-      filterOptions: this.options
-    };
+  private updateFilters(value: string[]) {
+    this.$emit("input", value);
   }
-
-  private updateFilters(value: string[]){
-    this.$emit("input", value)
+  private removeFilter(event, filter){
+    this.value.splice(this.value.indexOf(filter), 1);
+    this.updateFilters(this.value);
   }
-
-  // methods: {
-  //   addTag (newTag: string):void {
-
-  //     const tag = {
-  //       name: newTag,
-  //       code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-  //     }
-  //     this.options.push(tag)
-  //     this.value.push(tag)
-  //   }
-  // }
 }
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

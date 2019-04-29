@@ -37,28 +37,14 @@ interface Space {
     StudySpace,
     Toolbar
   }
-  // data () {
-  //   return {
-  //       value: [],
-  //       options: this.options,
-  //   }
-  // },
-  // methods: {
-  //   addTag (newTag) {
-  //       const tag = {
-  //           name: newTag,
-  //           code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-  //       }
-  //       this.options.push(tag)
-  //       this.value.push(tag)
-  //   }
-  // }
+
 })
 export default class Spaces extends Vue {
   private spaces: Space[] = [];
   private filters: string[] = [];
   private filteredSpaces: Space[] = [];
   private options: string[] = [];
+
   private mounted() {
     axios.get("http://localhost:3001/spaces").then(response => {
       response.data.forEach(element => {
@@ -77,7 +63,6 @@ export default class Spaces extends Vue {
 
   private updateSpaceSelection() {
     if (this.filters.length != 0) {
-      console.log(this.filters);
       let toFilter = this.spaces;
       let filtered: Space[];
       for (let filter of this.filters) {
@@ -97,7 +82,6 @@ export default class Spaces extends Vue {
         }
         toFilter = filtered;
       }
-      console.log(filtered)
       this.filteredSpaces = filtered;
       return;
     }
