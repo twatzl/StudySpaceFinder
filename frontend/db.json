@@ -7,14 +7,18 @@
       "floor": "1",
       "open": "8-18",
       "people": "3",
-      "info": "Big screen on the wall. No computers, you can connect your laptop via VGA or HDMI.",
+      "info": "For small groups or pair working: a room with a small round table and 3 chairs.",
       "reservable": true,
       "location2": "Library",
       "photo": "G103c.png",
       "tags": [
         "groupwork",
-        "screen",
-        "G103c"
+        "desk",
+        "G103c",
+        "outlet",
+        "private",
+        "quiet",
+        "reservable in advance"
       ]
     },
     {
@@ -29,9 +33,13 @@
       "location2": "Library",
       "photo": "g103e.png",
       "tags": [
-        "screen",
+        "desk",
         "G103e",
-        "groupwork"
+        "groupwork",
+        "outlet",
+        "private",
+        "quiet",
+        "reservable in advance"
       ]
     },
     {
@@ -46,9 +54,15 @@
       "location2": "Library",
       "photo": "G103g.png",
       "tags": [
-        "sofas",
+        "desk",
+        "G103e",
+        "groupwork",
+        "outlet",
+        "private",
+        "quiet",
         "screen",
-        "G103g"
+        "natural light",
+        "reservable in advance"
       ]
     },
     {
@@ -58,7 +72,7 @@
       "location2": "Library",
       "floor": "1",
       "open": "8-18",
-      "people": "12 + 4",
+      "people": "12",
       "info": "For group working and meetings. This is quite a big room with 12 places around the table, two sofas and a screen. It is possible to separate the big table to several smaller ones.",
       "reservable": true,
       "photo": "G108a.png",
@@ -66,7 +80,12 @@
         "groupwork",
         "screen",
         "G108a",
-        "sofa"
+        "sofa",
+        "outlet",
+        "private",
+        "quiet",
+        "desk",
+        "reservable in advance"
       ]
     },
     {
@@ -76,14 +95,19 @@
       "floor": "2",
       "open": "8-18",
       "people": "2",
-      "info": "For group working.",
+      "info": "For group working. A room with a round table and 2 chairs, also a whiteboard and markers.",
       "reservable": true,
       "location2": "Library",
       "photo": "go.png",
       "tags": [
         "groupwork",
         "whiteboard",
-        "private"
+        "private",
+        "quiet",
+        "outlet",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -96,10 +120,15 @@
       "info": "For group working. A room with a round table and 5 chairs.",
       "reservable": true,
       "location2": "Library",
-      "photo": "modula.png", 
+      "photo": "modula.png",
       "tags": [
         "groupwork",
-        "private"
+        "private",
+        "quiet",
+        "outlet",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -109,12 +138,19 @@
       "floor": "2",
       "open": "8-18",
       "people": "5",
-      "info": "For group working.",
+      "info": "For group working. A room with a round table, 5 chairs and a display.",
       "reservable": true,
       "location2": "Library",
-      "photo": "",
+      "photo": "neko.png",
       "tags": [
-        "groupwork"
+        "groupwork",
+        "private",
+        "quiet",
+        "outlet",
+        "screen",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -130,7 +166,12 @@
       "photo": "octave.png",
       "tags": [
         "groupwork",
-        "private"
+        "private",
+        "quiet",
+        "outlet",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -147,7 +188,13 @@
       "tags": [
         "groupwork",
         "display",
-        "private"
+        "private",
+        "quiet",
+        "outlet",
+        "screen",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -164,7 +211,12 @@
       "tags": [
         "groupwork",
         "private",
-        "display"
+        "quiet",
+        "outlet",
+        "screen",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -179,7 +231,13 @@
       "location2": "Library",
       "room": "",
       "tags": [
-        "groupwork"
+        "groupwork",
+        "quiet",
+        "outlet",
+        "private",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -194,7 +252,13 @@
       "location2": "Library",
       "photo": "",
       "tags": [
-        "groupwork"
+        "groupwork",
+        "quiet",
+        "outlet",
+        "private",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -211,7 +275,12 @@
       "tags": [
         "groupwork",
         "whiteboard",
-        "private"
+        "private",
+        "quiet",
+        "outlet",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -227,7 +296,12 @@
       "photo": "",
       "tags": [
         "groupwork",
-        "private"
+        "private",
+        "quiet",
+        "outlet",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -244,7 +318,12 @@
       "tags": [
         "groupwork",
         "private",
-        "whiteboard"
+        "whiteboard",
+        "quiet",
+        "outlet",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -260,7 +339,12 @@
       "photo": "",
       "tags": [
         "groupwork",
-        "private"
+        "quiet",
+        "outlet",
+        "private",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -276,7 +360,12 @@
       "photo": "",
       "tags": [
         "groupwork",
-        "private"
+        "quiet",
+        "outlet",
+        "private",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -293,7 +382,12 @@
       "tags": [
         "groupwork",
         "private",
-        "display"
+        "screen",
+        "quiet",
+        "outlet",
+        "desk",
+        "reservable in advance",
+        "reservable ad hoc"
       ]
     },
     {
@@ -303,12 +397,15 @@
       "floor": "1",
       "open": "8-20",
       "people": "20",
-      "info": "This is an open group work space in the Libary 1st floor, with several small tables. Talking is allowed!",
+      "info": "This is an open group work space in the Libary 1st floor, with several small tables. Talking is allowed! You can find Science Library textbook collection here.",
       "reservable": false,
       "location2": "Library",
       "photo": "open_group.png",
       "tags": [
-        "groupwork"
+        "groupwork",
+        "desk",
+        "textbook collection",
+        "outlet"
       ]
     },
     {
@@ -317,15 +414,34 @@
       "building": "Physicum",
       "floor": "1",
       "open": "8-20",
-      "people": "1",
+      "people": "4",
       "info": "The egg chair is an all time favorite. With spectacular views to A.I. Virtanen plaza and the Chemicum building, you can bath in the sunshine in an comfortable way",
       "reservable": false,
       "location2": "Library",
+      "photo": "eggs.png",
       "tags": [
         "private",
         "quirky",
         "natural light",
         "view"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Library main study area",
+      "building": "Physicum",
+      "location2": "Library",
+      "floor": "1",
+      "open": "8-20",
+      "people": "25",
+      "info": "Nice view to A.I. Virtasen aukio. There are some desks and chairs, and always some students studying here from early morning until closing time.",
+      "reservable": false,
+      "photo": "lib_hall.png",
+      "tags": [
+        "natural light",
+        "view",
+        "greenery",
+        "desk"
       ]
     },
     {
@@ -338,13 +454,10 @@
       "people": "12",
       "info": "These orange sofas and chairs have nice soft padding, so you can sit as long as you want. There are some low coffee tables for your laptop, or, coffee",
       "reservable": false,
-      "photo":"orange.png",
+      "photo": "orange.png",
       "tags": [
         "sofa",
-        "armchair",
-        "comfortable",
-        "lounge",
-        "quiet"
+        "comfortable"
       ]
     },
     {
@@ -362,7 +475,8 @@
         "quiet",
         "copying",
         "natural light",
-        "desk light"
+        "desk light",
+        "desk"
       ]
     },
     {
@@ -380,12 +494,13 @@
         "quiet",
         "computer",
         "natural light",
-        "copying"
+        "copying",
+        "desk"
       ]
     },
     {
       "id": 26,
-      "name": "Absolutely quiet work room",
+      "name": "Quiet reading room 1st floor",
       "building": "Physicum",
       "location2": "Library",
       "floor": "1",
@@ -395,7 +510,26 @@
       "reservable": false,
       "photo": "quiet.png",
       "tags": [
-        "quiet"
+        "quiet",
+        "desk"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Quiet reading room 2nd floor",
+      "building": "Physicum",
+      "location2": "Library",
+      "floor": "2",
+      "open": "8-20",
+      "people": "8",
+      "info": "In this room speaking is not encouraged. One large shared table, glass walls.",
+      "reservable": false,
+      "photo": "silent2.png",
+      "tags": [
+        "quiet",
+        "natural light",
+        "desk",
+        "restroom"
       ]
     },
     {
@@ -405,10 +539,10 @@
       "location2": "Library",
       "floor": "2",
       "open": "8-20",
-      "people": "1",
-      "info": "These 4 standing desks are situated in the library 2nd floor. You can adjust the height of the electric table. An ergonimical chair is also provided.",
-      "reservable": false,   
-      "photo":"standing_library.png",
+      "people": "4",
+      "info": "These 4 standing desks are situated in the library 2nd floor. You can adjust the height of the electric table. An ergonomical chair is also provided.",
+      "reservable": false,
+      "photo": "standing_library.png",
       "tags": [
         "standing desk",
         "ergonomic",
@@ -428,7 +562,8 @@
       "photo": "col.png",
       "tags": [
         "computer",
-        "outlet"
+        "outlet",
+        "desk"
       ]
     },
     {
@@ -437,14 +572,14 @@
       "building": "Physicum",
       "floor": "1",
       "open": "8-18",
-      "people": "1",
+      "people": "4",
       "info": "In the library lobby you can find 4 computers, that you can use with your uni credentials. Some of them you can use standing, some have chairs. Not suitable if you would like to concentrate.",
       "reservable": false,
       "location2": "Library",
       "photo": "info_computers.png",
       "tags": [
         "computer",
-        "standing"
+        "standing desk"
       ]
     },
     {
@@ -453,14 +588,15 @@
       "building": "Physicum",
       "floor": "2",
       "open": "8-18",
-      "people": "1",
+      "people": "5",
       "info": "These 6 solo sofas or armchairs in library 2nd floor give you some comfortable privacy.",
       "reservable": false,
       "location2": "Library",
       "photo": "solo_sofas.png",
       "tags": [
         "private",
-        "natural light"
+        "natural light",
+        "comfortable"
       ]
     },
     {
@@ -476,7 +612,8 @@
       "photo": "high1.png",
       "tags": [
         "outlet",
-        "natural light"
+        "natural light",
+        "desk"
       ]
     },
     {
@@ -485,7 +622,7 @@
       "building": "Physicum",
       "floor": "2",
       "open": "8-18",
-      "people": "2",
+      "people": "8",
       "info": "Nice reading desks and padded chairs with some screen to give you privacy. Two chairs per table and cubicle.",
       "reservable": false,
       "location2": "Library",
@@ -493,7 +630,8 @@
       "tags": [
         "outlet",
         "natural light",
-        "lamp"
+        "desk light",
+        "desk"
       ]
     },
     {
@@ -502,7 +640,7 @@
       "building": "Physicum",
       "floor": "2",
       "open": "8-18",
-      "people": "1",
+      "people": "10",
       "info": "8 desks with computers and displays and natural light on library 2nd floor.",
       "reservable": false,
       "location2": "Library",
@@ -510,7 +648,26 @@
       "tags": [
         "outlet",
         "natural light",
-        "computer"
+        "computer",
+        "desk"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Reading row",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-18",
+      "people": "15",
+      "info": "Desks with a view and some natural light on library 2nd floor.",
+      "reservable": false,
+      "location2": "Library",
+      "photo": "reading_row.png",
+      "tags": [
+        "outlet",
+        "natural light",
+        "view",
+        "desk"
       ]
     },
     {
@@ -526,7 +683,8 @@
       "photo": "high2.png",
       "tags": [
         "outlet",
-        "restroom"
+        "restroom",
+        "desk"
       ]
     },
     {
@@ -535,7 +693,7 @@
       "building": "Physicum",
       "floor": "2",
       "open": "8-18",
-      "people": "3",
+      "people": "6",
       "info": "Two high back sofas face to face, one sofa can fit 3 people. A screen protecting you from the traffic to restrooms.",
       "reservable": false,
       "location2": "Library",
@@ -543,7 +701,8 @@
       "tags": [
         "outlet",
         "restroom",
-        "privacy"
+        "private",
+        "comfortable"
       ]
     },
     {
@@ -558,7 +717,7 @@
       "location2": "Library",
       "photo": "long.png",
       "tags": [
-        "lamp",
+        "desk",
         "restroom"
       ]
     },
@@ -575,7 +734,9 @@
       "photo": "corridor.png",
       "tags": [
         "bench",
-        "natural light"
+        "natural light",
+        "meeting point",
+        "greenery"
       ]
     },
     {
@@ -605,9 +766,13 @@
       "info": "The hallway of Exactum 1st floor has some sofas and tables.",
       "reservable": false,
       "location2": "C",
-      "photo": "",
+      "photo": "e_hallway.png",
       "tags": [
-        "sofas"
+        "sofas",
+        "comfortable",
+        "meeting point",
+        "bench",
+        "restroom"
       ]
     },
     {
@@ -642,7 +807,9 @@
         "natural light",
         "restroom",
         "unicafe",
-        "locker"
+        "locker",
+        "desk",
+        "food"
       ]
     },
     {
@@ -664,7 +831,9 @@
         "copying",
         "restroom",
         "locker",
-        "DK115"
+        "DK115",
+        "desk",
+        "meeting point"
       ]
     },
     {
@@ -682,7 +851,9 @@
         "statistics",
         "sofa",
         "student organization",
-        "coffee"
+        "coffee",
+        "comfortable",
+        "help"
       ]
     },
     {
@@ -700,8 +871,8 @@
         "groupwork",
         "private",
         "CK110",
-        "computer science",
-        "data science"
+        "data science",
+        "desk"
       ]
     },
     {
@@ -718,7 +889,8 @@
       "tags": [
         "pöhinä",
         "coffee",
-        "DK116"
+        "DK116",
+        "desk"
       ]
     },
     {
@@ -728,17 +900,19 @@
       "floor": "K",
       "open": "8-19",
       "people": "20",
-      "info": "Gurula is the den of TKO-äly, the association of computer science students",
+      "info": "Gurula is the den of TKO-äly, the association of computer science students (photo rights: TKO-äly)",
       "reservable": false,
       "location2": "",
       "photo": "gurula.jpg",
       "tags": [
         "sofas",
         "coffee",
-        "computers",
         "help",
         "computer science",
-        "student organization"
+        "student organization",
+        "comfortable",
+        "games",
+        "textbook collection"
       ]
     },
     {
@@ -755,7 +929,7 @@
       "tags": [
         "sofas",
         "coffee",
-        "computers",
+        "computer",
         "help",
         "computer science",
         "DK110"
@@ -781,23 +955,6 @@
       ]
     },
     {
-      "id": 35,
-      "name": "Apple corner",
-      "building": "Exactum",
-      "location2": "A",
-      "floor": "2",
-      "open": "8-18",
-      "people": "8",
-      "info": "Near the stair case on 2nd floor you can find some Apple computers and sofas.",
-      "reservable": false,
-      "photo": "apple.png",
-      "tags": [
-        "apple",
-        "computer",
-        "comfortable"
-      ]
-    },
-    {
       "id": 34,
       "name": "Massage chair",
       "building": "Exactum",
@@ -813,6 +970,25 @@
         "comfortable",
         "private",
         "quirky"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Apple corner",
+      "building": "Exactum",
+      "location2": "A",
+      "floor": "2",
+      "open": "8-18",
+      "people": "8",
+      "info": "Near the stair case on 2nd floor you can find some Apple computers and sofas.",
+      "reservable": false,
+      "photo": "apple.png",
+      "tags": [
+        "apple",
+        "computer",
+        "comfortable",
+        "sofa",
+        "natural light"
       ]
     },
     {
@@ -854,6 +1030,27 @@
       ]
     },
     {
+      "id": 64,
+      "name": "Exactum 2nd floor C",
+      "building": "Exactum",
+      "location2": "C",
+      "floor": "2",
+      "open": "8-18",
+      "people": "20",
+      "info": "Some sofas, exercise balls, the ordinary lounge like things",
+      "reservable": false,
+      "photo": "exa2c.png",
+      "tags": [
+        "apple",
+        "computer",
+        "computer science",
+        "exercise ball",
+        "restroom",
+        "chalk board",
+        "desk"
+      ]
+    },
+    {
       "id": 61,
       "name": "Komero",
       "building": "Exactum",
@@ -887,30 +1084,13 @@
       "tags": [
         "tutors",
         "mathematics",
-        "computers",
-        "help",
-        "whiteboard"
-      ]
-    },
-    {
-      "id": 64,
-      "name": "Exactum 2nd floor C",
-      "building": "Exactum",
-      "location2": "C",
-      "floor": "2",
-      "open": "8-18",
-      "people": "20",
-      "info": "Some sofas, exercise balls, the ordinary lounge like things",
-      "reservable": false,
-      "photo": "exa2c.png",
-      "tags": [
-        "apple",
         "computer",
-        "computer science",
+        "help",
+        "whiteboard",
+        "draw table",
         "exercise ball",
-        "restroom",
         "chalk board",
-        "desk"
+        "restroom"
       ]
     },
     {
@@ -944,7 +1124,9 @@
       "photo": "chess.png",
       "tags": [
         "sofa",
-        "chess"
+        "chess",
+        "comfortable",
+        "natural light"
       ]
     },
     {
@@ -955,7 +1137,7 @@
       "floor": "4",
       "open": "8-18",
       "people": "10",
-      "info": "You can feel the vibrations being so close to the seismology department. It's an ordinary computer and sofa corner though, not an earthquake simulator.",
+      "info": "You can almost feel the vibrations being so close to the seismology department. Computer and sofa corner.",
       "reservable": false,
       "photo": "4floorC.png",
       "tags": [
@@ -963,7 +1145,8 @@
         "restroom",
         "sofa",
         "computer",
-        "green"
+        "greenery",
+        "natural light"
       ]
     },
     {
@@ -995,12 +1178,16 @@
       "info": "The Unicafe Physicum sells you paninis and coffee, salads and more coffee. Sometimes cold during the winter time, other times warm and welcoming area also for studying.",
       "reservable": false,
       "location2": "",
-      "photo": "",
+      "photo": "phunicafe.png",
       "tags": [
         "groupwork",
         "coffee",
         "unicafe",
-        "food"
+        "food",
+        "meeting point",
+        "desk",
+        "natural light",
+        "restroom"
       ]
     },
     {
@@ -1037,6 +1224,7 @@
         "natural light",
         "geography",
         "coffee",
+        "student organization",
         "mao"
       ]
     },
@@ -1088,89 +1276,7 @@
         "geography",
         "A114",
         "A113",
-        "silent",
         "computer"
-      ]
-    },
-    {
-      "id": 57,
-      "name": "Laskupaja",
-      "building": "Physicum",
-      "floor": "2",
-      "open": "8-17.30",
-      "people": "20",
-      "info": "Computer class room on Physicum 2nd floor.",
-      "reservable": false,
-      "location2": "",
-      "photo": "",
-      "tags": [
-        "D210",
-        "computer"
-      ]
-    },
-    {
-      "id": 69,
-      "name": "Computer class room D211",
-      "building": "Physicum",
-      "floor": "2",
-      "open": "8-17.30",
-      "people": "20",
-      "info": "Computer class room in Physicum 2nd floor.",
-      "reservable": false,
-      "location2": "",
-      "photo": "d211.png",
-      "tags": [
-        "D211",
-        "computer"
-      ]
-    },
-    {
-      "id": 58,
-      "name": "Class room D204",
-      "building": "Physicum",
-      "floor": "2",
-      "open": "8-17.30",
-      "people": "20",
-      "info": "Just a class room, no computers, might be reserved sometimes.",
-      "reservable": false,
-      "location2": "Kivipiha",
-      "photo": "d204.png",
-      "tags": [
-        "D204"
-      ]
-    },
-    {
-      "id": 59,
-      "name": "Class room D208",
-      "building": "Physicum",
-      "floor": "2",
-      "open": "8-17.30",
-      "people": "20",
-      "info": "Just a class room, no computers, might be reserved sometimes.",
-      "reservable": false,
-      "location2": "Kivipiha",
-      "photo": "d208.png",
-      "tags": [
-        "D208"
-      ]
-    },
-    {
-      "id": 33,
-      "name": "Hiekkalaatikko",
-      "building": "Physicum",
-      "location2": "Near the roof",
-      "floor": "3",
-      "open": "8-18",
-      "people": "15",
-      "info": "Highest study place in Kumpula. Climb the stairs to Physicum 4th floor, and you find some tables and chairs and lots of natural light.",
-      "reservable": false,
-      "photo": "",
-      "tags": [
-        "view",
-        "light",
-        "sandbox",
-        "hiekkis",
-        "quirky"
       ]
     },
     {
@@ -1189,6 +1295,93 @@
         "student organization",
         "sofas",
         "coffee"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Laskupaja",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-17.30",
+      "people": "20",
+      "info": "Computer class room on Physicum 2nd floor.",
+      "reservable": false,
+      "location2": "",
+      "photo": "",
+      "tags": [
+        "D210",
+        "computer",
+        "desk"
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Computer class room D211",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-17.30",
+      "people": "20",
+      "info": "Computer class room in Physicum 2nd floor.",
+      "reservable": false,
+      "location2": "",
+      "photo": "d211.png",
+      "tags": [
+        "D211",
+        "computer",
+        "desk"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Class room D204",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-17.30",
+      "people": "20",
+      "info": "Just a class room, no computers, might be reserved sometimes.",
+      "reservable": false,
+      "location2": "Kivipiha",
+      "photo": "d204.png",
+      "tags": [
+        "D204",
+        "desk"
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Class room D208",
+      "building": "Physicum",
+      "floor": "2",
+      "open": "8-17.30",
+      "people": "20",
+      "info": "Just a class room, no computers, might be reserved sometimes.",
+      "reservable": false,
+      "location2": "Kivipiha",
+      "photo": "d208.png",
+      "tags": [
+        "D208",
+        "desk"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Sandbox",
+      "building": "Physicum",
+      "location2": "Near the roof",
+      "floor": "3",
+      "open": "8-18",
+      "people": "15",
+      "info": "Highest study place in Kumpula. Climb the stairs to Physicum 4th floor, and you find some tables and chairs and lots of natural light.",
+      "reservable": false,
+      "photo": "sandbox.png",
+      "tags": [
+        "view",
+        "light",
+        "hiekkalaatikko",
+        "hiekkis",
+        "quirky",
+        "groupwork",
+        "desk"
       ]
     }
   ]

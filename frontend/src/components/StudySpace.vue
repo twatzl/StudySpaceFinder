@@ -3,7 +3,7 @@
     <md-card>
       <md-card-media>
         <img v-if="space.photo" :src="require(`@/assets/photos/${space.photo}`)" >
-         <img v-else :src="require(`@/assets/photos/library.png`)">
+         <img v-else :src="require(`@/assets/photos/no_photo.png`)">
       </md-card-media>
       <md-card-header>
         <div class="md-title">{{ space.name }}</div>
