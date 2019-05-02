@@ -4,8 +4,10 @@
       <div class="md-toolbar-row">
         <div class="md-toolbar-section-start">
           <h3 class="md-title">Study spaces</h3>
+         
         </div>
       </div>
+      
       <div class="md-toolbar-row">
         <div style="margin: 8px">
           <multiselect
@@ -41,7 +43,13 @@
         </div>
       </div>
     </md-toolbar>
+    <back-to-top class="btn-to-top" bottom="20px" right="20px">
+      <md-button class="md-fab md-mini md-primary">
+        <md-icon>keyboard_arrow_up</md-icon>
+      </md-button>
+    </back-to-top>
   </div>
+  
 </template>
 
 <style lang="scss" scoped>
@@ -63,6 +71,14 @@
 .search {
   max-width: 500px;
   margin-left: 4px;
+}
+.btn-to-top { 
+  width: 60px;
+  height: 60px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 22px;
 }
 </style>
 
